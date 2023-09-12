@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ta {
+public class Tablero {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
 
@@ -12,6 +12,7 @@ public class Ta {
 
         // Tablero:
         char[][] matriz = new char[TAMANO][TAMANO];
+        int[] cantidadFichas = new int[TAMANO];
 
         // Imprimir matriz:
         for(int i=0; i<matriz.length; i++){
@@ -26,9 +27,10 @@ public class Ta {
             char simbolo = Simbolo_Jugador_1;
             if(!Turno1)
                 simbolo = Simbolo_Jugador_2;
-            System.out.println("Ingresa tu posición (X)");
+            System.out.println("Ingresa tu posición (X,Y)");
             int x = lector.nextInt();
-
+            int y = TAMANO - 1 - cantidadFichas[x];
+            cantidadFichas[x] += 1;
             matriz[y][x] = simbolo;
 
             // Imprimir matriz:
