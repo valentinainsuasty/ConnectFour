@@ -27,7 +27,7 @@ public class Tablero {
             char simbolo = Simbolo_Jugador_1;
             if(!Turno1)
                 simbolo = Simbolo_Jugador_2;
-            System.out.println("Ingresa tu posición (X,Y)");
+            System.out.println("Ingresa tu posición (X)");
             int x = lector.nextInt();
             int y = TAMANO - 1 - cantidadFichas[x];
             cantidadFichas[x] += 1;
