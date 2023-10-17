@@ -15,11 +15,11 @@ public class Evaluador {
 
         char[][] matriz = {
                 {' ', ' ', ' ', ' ', ' ', ' '},
-                {' ', ' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', 'X', ' '},
                 {' ', ' ', ' ', 'X', ' ', ' '},
                 {' ', ' ', 'X', 'X', ' ', ' '},
                 {'Y', 'X', 'Y', 'Y', ' ', ' '},
-                {'X', 'Y', 'Y', 'X', ' ', ' '}
+                {' ', 'Y', 'Y', 'X', ' ', ' '}
         };
 
         //int[] ys = {1, 2, 3, 4, 0, 0};
@@ -56,7 +56,7 @@ public class Evaluador {
             }
         }
         // Verifico la diagonal principal:
-        if (x == y && !ConnectFour) {
+        if (x == y) {
             contador = 0;
             for (int i = 0; i < Tamano; i++) {
                 if (matriz[i][i] == simbolo) {
@@ -71,7 +71,7 @@ public class Evaluador {
             }
         }
         // Verifico la diagonal invertida:
-        if (x + y == Tamano - 1 && !ConnectFour) {
+        if (x + y == Tamano - 1) {
             contador = 0;
             for (int i = 0; i < Tamano; i++) {
                 if (matriz[i][Tamano - 1 - i] == simbolo) {
